@@ -1,5 +1,11 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const http = require('http');
+const express = require('express');
+const app = express();
+require('http').createServer().listen(3000)
+require('dotenv').config()
+
 
 let prefix = "y-";
 
@@ -81,3 +87,11 @@ bot.on("message", message => {
 });
 
 bot.login(process.env.TOKEN)
+app.get("/", (request, response) => {
+    console.log(Date.now() + " Ping Received");
+    response.sendStatus(200);
+  });
+  app.listen(process.env.PORT);
+  setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  }, 200000);
