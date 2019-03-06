@@ -4,7 +4,6 @@ const http = require('http');
 const express = require('express');
 const app = express();
 require('http').createServer().listen(3000)
-require('dotenv').config()
 
 
 let prefix = "y-";
