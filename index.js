@@ -33,25 +33,6 @@ bot.on("message", message => {
         message.delete()
     }
 });
-//Suggestions
-bot.on("message", message =>{
-    if(message.channel.id === "549174913001324555") {
-
-        if(message.author.id === "284377189405818880") return;
-            
-        let args = message.content.split(" ").slice(0);
-        let thingToEcho = args.join(" ")
-        
-        message.delete()
-        
-        var embed = new Discord.RichEmbed()
-            .setThumbnail(message.guild.iconURL)
-            .setAuthor(message.author.username, message.author.avatarURL)
-            .addField("**Suggestion**","|" + thingToEcho, true)
-            .setColor("#ff5050")
-            message.channel.sendEmbed(embed);
-        }
-});
 //News et Sondages
 bot.on("message", message => {
     if(message.content.startsWith(prefix + "news")){
