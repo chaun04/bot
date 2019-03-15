@@ -66,21 +66,6 @@ bot.on("message", message => {
     }
 });
 
-//EVENT
-bot.on("message", message => {
-    if(message.content === prefix + "event"){
-        message.delete()
-        let role = message.guild.roles.find(r => r.name === "Pass Event");
-
-        let member = message.author;
-
-        member.addRole(role).catch(console.error);
-
-
-    }
-});
-
-
 bot.login(process.env.TOKEN)
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping Received");
