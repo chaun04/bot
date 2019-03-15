@@ -70,7 +70,8 @@ bot.on("message", message => {
 bot.on("message", message => {
     if(message.content === prefix + "event"){
         message.delete()
-        message.member.addRole("Pass Event");
+        var role = message.guild.roles.find(role => role.name === "Pass Event");
+        message.member.addRole("role");
     }
 });
 
