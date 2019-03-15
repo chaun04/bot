@@ -70,7 +70,7 @@ bot.on("message", message => {
 bot.on("message", message => {
     if(message.content === prefix + "event"){
         message.delete()
-        message.member.addRole("name","Pass Event");
+        message.member.addRole("Pass Event");
     }
 });
 
