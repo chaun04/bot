@@ -66,6 +66,15 @@ bot.on("message", message => {
     }
 });
 
+//EVENT
+bot.on("message", message => {
+    if(message.content === prefix + "event"){
+        message.delete()
+        message.member.addRole("Pass Event");
+    }
+});
+
+
 bot.login(process.env.TOKEN)
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping Received");
