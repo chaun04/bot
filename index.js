@@ -88,6 +88,24 @@ bot.on("message", message => {
         message.channel.sendEmbed(sug);
     }
 });
+//Sondages Momo
+bot.on("message", message => {
+    if(message.content.startsWith(prefix + "momo")){
+        message.delete()
+
+        let args = message.content.split(" ").slice(1);
+        let thingToEcho = args.join(" ")
+    
+        message.delete()
+        
+        const momo = new Discord.RichEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .addField("**Les Sondages de Momo**", thingToEcho, true)
+        .setColor("#ff5050")
+        .setTimestamp()
+        message.channel.sendEmbed(momo);
+    }
+});
 
 bot.login(process.env.TOKEN)
 app.get("/", (request, response) => {
