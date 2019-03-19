@@ -76,12 +76,13 @@ bot.on("message", message => {
         if(message.author.id === "284377189405818880") return;
         
         const args = message.content.slice(0).trim().split(/ +/g);
+        const msgtosend = args.join(" ");
         
         message.delete()
         
         const sug = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
-        .addField("**Suggestions**", args, true)
+        .addField("**Suggestions**", msgtosend, true)
         .setColor("#ff5050")
         .setTimestamp()
         message.channel.sendEmbed(sug);
