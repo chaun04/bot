@@ -41,7 +41,9 @@ bot.on("message", message => {
 
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
-
+    
+        message.delete()
+        
         const news = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
         .addField("**News**", thingToEcho, true)
@@ -56,6 +58,8 @@ bot.on("message", message => {
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
 
+        message.delete()
+        
         const sond = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
         .addField("**Sondage**", thingToEcho, true)
@@ -63,6 +67,24 @@ bot.on("message", message => {
         .setColor("#ff5050")
         .setTimestamp()
         message.channel.sendEmbed(sond);
+    }
+});
+//Suggestions
+bot.on("message", message => {
+    if(message.channel.id === "549174913001324555"){
+        
+        if(message.author.id === "284377189405818880") return;
+        
+        const args = message.content.slice(0).trim().split(/ +/g);
+        
+        message.delete()
+        
+        const sug = new Discord.RichEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .addField("**Suggestions**", args, true)
+        .setColor("#ff5050")
+        .setTimestamp()
+        message.channel.sendEmbed(sug);
     }
 });
 
