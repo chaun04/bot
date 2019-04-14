@@ -88,9 +88,9 @@ bot.on("message", message => {
         message.channel.sendEmbed(sug);
     }
 });
-//Sondages Momo
+//Sondages Thomas
 bot.on("message", message => {
-    if(message.content.startsWith(prefix + "momo")){
+    if(message.content.startsWith(prefix + "t")){
         message.delete()
 
         let args = message.content.split(" ").slice(1);
@@ -100,7 +100,7 @@ bot.on("message", message => {
         
         const momo = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
-        .addField("**Les Sondages de Momo**", thingToEcho, true)
+        .addField("**Les Sondages de Thomas**", thingToEcho, true)
         .setColor("#ff5050")
         .setTimestamp()
         message.channel.sendEmbed(momo);
