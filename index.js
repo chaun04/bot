@@ -106,6 +106,24 @@ bot.on("message", message => {
         message.channel.sendEmbed(momo);
     }
 });
+//Anonyme
+bot.on("message", message => {
+    if(message.channel.id === "566910585758023692"){
+        
+        if(message.author.id === "284377189405818880") return;
+        
+        const args = message.content.slice(0).trim().split(/ +/g);
+        const msgtosend = args.join(" ");
+        
+        message.delete()
+        
+        const sug = new Discord.RichEmbed()
+        .addField("**Message Anonyme**", msgtosend, true)
+        .setColor("#ff5050")
+        .setTimestamp()
+        message.channel.sendEmbed(sug);
+    }
+});
 
 bot.login(process.env.TOKEN)
 app.get("/", (request, response) => {
